@@ -1,0 +1,40 @@
+.side-nav {
+  width: 280px;
+  height: 100%;
+  border-left: 1px solid #dedede;
+}
+.nav-logo {
+  margin-top: 35px;
+}
+
+.chapters {
+  font-family: 'Tajawal';
+  margin-top: 80px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
+}
+.chapters li:not(:last-child) {
+  margin-bottom: 30px;
+}
+.chapters li img {
+  width: 30px;
+  aspect-ratio: 1/1;
+  margin-left: 20px;
+  filter: brightness(0) saturate(100%);
+  transition: filter 0.3s ease-out;
+}
+.chapters li.active:hover img {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(86%) saturate(2270%) hue-rotate(212deg) brightness(100%)
+    contrast(90%);
+  transition: filter 0.3s ease-out;
+}
+.chapters li.active:hover {
+  color: var(--color-primary);
+  transition: color 0.3s ease-out;
+}
+.chapters li.active {
+  transition: color 0.3s ease-out;
+}

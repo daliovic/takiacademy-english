@@ -1,0 +1,11 @@
+:root {
+    --color-primary: #2E6FF1;
+    --color-light: #dbf58f;
+  }
+.root-container {
+    height: 100%;
+}
+
+main {
+  padding: 45px;
+}
