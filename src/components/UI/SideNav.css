@@ -2,6 +2,7 @@
   width: 280px;
   height: 100%;
   border-left: 1px solid #dedede;
+  position: sticky;
 }
 .nav-logo {
   margin-top: 35px;
@@ -26,15 +27,22 @@
   filter: brightness(0) saturate(100%);
   transition: filter 0.3s ease-out;
 }
-.chapters li.active:hover img {
+.chapters li a.active img {
   filter: brightness(0) saturate(100%) invert(30%) sepia(86%) saturate(2270%) hue-rotate(212deg) brightness(100%)
     contrast(90%);
   transition: filter 0.3s ease-out;
 }
-.chapters li.active:hover {
-  color: var(--color-primary);
+.chapters li:hover img {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(86%) saturate(2270%) hue-rotate(212deg) brightness(100%)
+    contrast(90%);
+  transition: filter 0.3s ease-out;
+}
+
+.chapters li:hover *{
+  color: var(--color-primary)!important;
   transition: color 0.3s ease-out;
 }
-.chapters li.active {
+.chapters li a.active {
   transition: color 0.3s ease-out;
+  color: var(--color-primary);
 }

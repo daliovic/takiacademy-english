@@ -1,11 +1,23 @@
 :root {
-    --color-primary: #2E6FF1;
-    --color-light: #dbf58f;
-  }
+  --color-primary: #2e6ff1;
+  --color-light: #dbf58f;
+}
 .root-container {
-    height: 100%;
+  height: 100%;
 }
 
 main {
   padding: 45px;
+}
+
+.content-wrapper {
+  width: calc(100% - 280px);  
+}
+
+a {
+  text-decoration: none!important;
+  color: inherit;
+}
+html {
+  scrollbar-gutter: stable both-edges;
 }

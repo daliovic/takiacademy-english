@@ -4,14 +4,17 @@ import './App.css'
 import SideNav from './components/UI/SideNav'
 import Header from './components/Header/Header'
 import MainSection from './components/UI/MainSection'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 
 function App() {
   return (
-    <div className='root-container d-flex'>
+    <div className='root-container d-flex flex-strech'>
       <SideNav />
-      <div className='w-100'>
+      <div className='content-wrapper'>
         <Header />
-        <MainSection />
+        <Routes>
+          <Route path='/chapters/' element={<MainSection />}/>
+        </Routes>
       </div>
     </div>
   )

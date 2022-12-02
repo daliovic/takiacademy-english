@@ -5,6 +5,7 @@
   border: 1px solid #dedede;
   border-radius: 5px;
   position: relative;
+  padding: 0;
 }
 .chapter-card p:first-child {
   font-family: 'Tajawal';
@@ -32,4 +33,8 @@
   text-transform: capitalize;
 
   color: #000000;
+}
+.chapter-card :has(img){
+  object-fit: cover;
+  overflow: hidden;
 }

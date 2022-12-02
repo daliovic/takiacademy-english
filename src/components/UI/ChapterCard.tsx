@@ -1,14 +1,13 @@
 import React from 'react'
-import ch1 from "../../assets/graphics/chapters/ch1.png"
 import "./ChapterCard.css"
 
-export default function ChapterCard() {
+export default function ChapterCard( {title, description, image} : {title: string, description: string, image: string} ) {
   return (
-    <div className='d-flex flex-column chapter-card'>
-      <div><img src={ch1} alt="" /></div>
+    <div className='d-flex flex-column chapter-card flex-grow-1'>
+      <div><img src={image} alt="" /></div>
       <div>
-        <p>London Central</p>
-        <p>تعلم الإنكليزية مع هذه الدراما التلفزيونية المسلية</p>
+        <p>{title}</p>
+        <p>{description}</p>
       </div>
     </div>
   )

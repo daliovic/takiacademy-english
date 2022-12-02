@@ -12,7 +12,7 @@
   color: #000000;
 }
 .main-title {
-  height: 128px;
+  height: 83px;
 }
 .main-title button {
   width: 180px;
@@ -27,4 +27,11 @@
   line-height: 18px;
   background: #2e6ff1;
   border-radius: 10px;
+}
+
+main section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 290px);
+  justify-content: space-between;
+  grid-gap: 25px;
 }

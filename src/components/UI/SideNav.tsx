@@ -6,28 +6,34 @@ import levelsIcon from '../../assets/graphics/nav-icons/levels-icon.svg'
 import lessonsIcon from '../../assets/graphics/nav-icons/lessons-icon.svg'
 import usersIcon from '../../assets/graphics/nav-icons/users-icon.svg'
 import settingsIcon from '../../assets/graphics/nav-icons/setting-icon.svg'
+import { NavLink } from 'react-router-dom'
 
 export default function SideNav() {
   const navSections = [
     {
       title: 'الفصول',
       icon: chaptersIcon,
+      path: '/chapters',
     },
     {
       title: 'المستويات',
       icon: levelsIcon,
+      path: '/levels',
     },
     {
       title: 'الدروس',
       icon: lessonsIcon,
+      path: '/lessons',
     },
     {
       title: 'المستخدمين',
       icon: usersIcon,
+      path: '/users',
     },
     {
       title: 'الإعدادات',
       icon: settingsIcon,
+      path: '/settings',
     },
   ]
   return (
@@ -39,10 +45,12 @@ export default function SideNav() {
         <ul>
           {navSections.map((item, i) => {
             return (
-              <li key={i} className='active'>
-                <img src={item.icon} />
-                {item.title}
-              </li>
+                <li key={i}>
+              <NavLink to={`${item.path}`}>
+                  <img src={item.icon} />
+                  {item.title}
+              </NavLink>
+                </li>
             )
           })}
         </ul>
