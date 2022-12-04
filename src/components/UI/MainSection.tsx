@@ -62,8 +62,8 @@ export default function MainSection() {
         <MainButton clickHandler={() => {}}>أضف فصل جديد</MainButton>
       </div>
       <section>
-        {chapters.map((chapter) => (
-          <ChapterCard key={chapter.id} title={chapter.title} description={chapter.description} image={chapter.image} />
+        {chapters.map((chapter,i) => (
+          <ChapterCard i={i} key={chapter.id} title={chapter.title} description={chapter.description} image={chapter.image} />
         ))}
       </section>
     </main>
