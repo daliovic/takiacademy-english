@@ -15,7 +15,7 @@ export default function MainButton({
 }) {
 
   return (
-    <button className={`${s['main-button']} ${className}`} hidden={hidden}>
+    <button className={`${s['main-button']} ${className}`} hidden={hidden} onClick={clickHandler}>
       {children}
     </button>
   )

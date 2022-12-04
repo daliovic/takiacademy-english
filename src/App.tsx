@@ -27,8 +27,9 @@ function App() {
       <SideNav />
       <div className='content-wrapper d-flex flex-column'>
         <Header />
-        <AnimatePresence mode='wait' presenceAffectsLayout = {true}>
+        <AnimatePresence mode='wait' presenceAffectsLayout={true}>
           <Routes>
+            <Route path='/' element={<Chapters />} />
             <Route path='/chapters/' element={<Chapters />} />
             <Route path='/lessons/' element={<Lessons />} />
             <Route path='/lessons/:id' element={<OneLesson />} />
