@@ -1,4 +1,11 @@
-.main-title span {
+.lessons h5 {
+  margin-right: 65px;
+  margin-bottom: 15px;
+}
+
+.lessons h4 {
+  margin-right: 65px;
+  margin-bottom: 15px;
   font-family: 'Tajawal';
   font-style: normal;
   font-weight: 700;
@@ -11,13 +18,9 @@
 
   color: #000000;
 }
-.main-title {
-  height: 83px;
-}
 
-main section {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 285px);
-  justify-content: space-between;
-  grid-gap: 20px;
+.lessons {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: calc(100vh - 90px);
 }

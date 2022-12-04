@@ -7,6 +7,7 @@ import lessonsIcon from '../../assets/graphics/nav-icons/lessons-icon.svg'
 import usersIcon from '../../assets/graphics/nav-icons/users-icon.svg'
 import settingsIcon from '../../assets/graphics/nav-icons/setting-icon.svg'
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 export default function SideNav() {
   const navSections = [
@@ -16,14 +17,14 @@ export default function SideNav() {
       path: '/chapters',
     },
     {
-      title: 'المستويات',
-      icon: levelsIcon,
-      path: '/levels',
-    },
-    {
       title: 'الدروس',
       icon: lessonsIcon,
       path: '/lessons',
+    },
+    {
+      title: 'المستويات',
+      icon: levelsIcon,
+      path: '/levels',
     },
     {
       title: 'المستخدمين',
@@ -36,6 +37,21 @@ export default function SideNav() {
       path: '/settings',
     },
   ]
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.15 * i,
+        duration: 1,
+        ease: [0.4, 0.09, 0.16, 0.99],
+      },
+    }),
+  }
   return (
     <aside className='side-nav d-flex flex-column align-items-center'>
       <div>
@@ -45,12 +61,13 @@ export default function SideNav() {
         <ul>
           {navSections.map((item, i) => {
             return (
-                <li key={i}>
-              <NavLink to={`${item.path}`}>
+              <motion.li key={i} custom={i} initial='hidden' animate='visible' variants={cardVariants}>
+                <NavLink to={`${item.path}`}>
                   <img src={item.icon} />
-                  {item.title}
-              </NavLink>
-                </li>
+                  <span>{item.title}</span>
+                  {/* {item.title} */}
+                </NavLink>
+              </motion.li>
             )
           })}
         </ul>

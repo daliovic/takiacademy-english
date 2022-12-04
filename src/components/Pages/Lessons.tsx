@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import ChapterCard from '../UI/ChapterCard'
-import './Chapters.css'
+import './Lessons.css'
 import ch1 from '../../assets/graphics/chapters/ch1.png'
 import ch2 from '../../assets/graphics/chapters/ch2.png'
 import ch3 from '../../assets/graphics/chapters/ch3.png'
@@ -11,11 +11,12 @@ import ch7 from '../../assets/graphics/chapters/ch7.png'
 import MainButton from '../UI/MainButton'
 import SecondaryButton from '../UI/SecondaryButton'
 import PageHeading from '../UI/PageHeading'
-import { Modal, Button } from 'react-bootstrap'
+import ListItemCard from '../UI/ListItemCard'
+import { Modal } from 'react-bootstrap'
 import { AnimatePresence, motion } from 'framer-motion'
 
-export default function Chapters() {
-  const chapters = [
+export default function Lessons() {
+  const lessons = [
     {
       id: 1,
       title: 'London Central',
@@ -67,14 +68,16 @@ export default function Chapters() {
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
   return (
+    <AnimatePresence>
       <motion.main
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -30 }}
-        transition={{ duration: 0.8 , ease: 'easeInOut'}}
-        className='d-flex flex-column w-100 chapters'>
-        <PageHeading title='الفصول'>
-          <MainButton clickHandler={handleShow}>أضف فصل جديد</MainButton>
+        transition={{ duration: 0.8, ease: 'easeInOut' }}
+        className='d-flex flex-column w-100 lessons'>
+        <PageHeading title='أكمل دورة اللغة الانجليزية'>
+          <SecondaryButton clickHandler={() => {}}>تعديل</SecondaryButton>
+          <MainButton clickHandler={handleShow}>أضف درس جديد</MainButton>
         </PageHeading>
         <Modal
           show={show}
@@ -84,7 +87,7 @@ export default function Chapters() {
           aria-labelledby='contained-modal-title-vcenter'
           centered>
           <Modal.Header closeButton>
-            <Modal.Title>أضف فصل جديد</Modal.Title>
+            <Modal.Title>أضف درس جديد</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
@@ -135,17 +138,15 @@ export default function Chapters() {
 
           {/* <Modal.Footer></Modal.Footer> */}
         </Modal>
-        <section>
-          {chapters.map((chapter, i) => (
-            <ChapterCard
-              key={chapter.id}
-              title={chapter.title}
-              description={chapter.description}
-              image={chapter.image}
-              i={i}
-            />
-          ))}
+        <section className='d-flex flex-column'>
+          <h5>
+            <b>دورة سياحة و سفر</b>
+          </h5>
+          {lessons.map((l, i) => {
+            return <ListItemCard key={`lesson${l.id}`} item={l} type='lesson' i={i}></ListItemCard>
+          })}
         </section>
       </motion.main>
+    </AnimatePresence>
   )
 }

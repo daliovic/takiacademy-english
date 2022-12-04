@@ -59,7 +59,7 @@ export default function MainSection() {
     <main className='d-flex flex-column w-100'>
       <div className='main-title d-flex justify-content-between'>
         <span>الفصول</span>
-        <MainButton>أضف فصل جديد</MainButton>
+        <MainButton clickHandler={() => {}}>أضف فصل جديد</MainButton>
       </div>
       <section>
         {chapters.map((chapter) => (
