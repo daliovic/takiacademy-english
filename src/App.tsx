@@ -38,6 +38,7 @@ function App() {
             <Route path='/chapters/' element={<Chapters />} />
             <Route path='/chapters/' element={<Chapters />} />
             <Route path='/chapters/' element={<Chapters />} />
+            <Route path="*" element={<p>Page not found</p>} />
           </Routes>
         </AnimatePresence>
       </div>
